@@ -15,5 +15,15 @@ EditorBuildSettings:
     path: Assets/Scenes/AugmentedRealityScene.unity
     guid: e36b8769becec1f46bf58c61b5a2e566
   m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 6416d800cb1ca5545a50a75ec204e350,
+      type: 2}
+    UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 0e40f8b67394b79429cea51131cc5afa,
+      type: 2}
     com.unity.addressableassets: {fileID: 11400000, guid: e7923c5bdc47e344d82a70e6e27ad2fc,
+      type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: bb412f75e84961d4aac6c79c635646a4,
+      type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: eea1a563eb12f3e49b986066f78afe29,
+      type: 2}
+    xr.sdk.mock-hmd.settings: {fileID: 11400000, guid: 92d827d998e8dcf428f805cc99daa02d,
       type: 2}
