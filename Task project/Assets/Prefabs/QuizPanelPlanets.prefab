@@ -138,3 +138,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _addressableName: QuestionsPlanets
+  _quizQuestionPlanetPrefab: {fileID: 5319712645202759230, guid: ac3274bf2a0980f46aaedbf814123b2b,
+    type: 3}

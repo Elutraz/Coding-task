@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using System;
 
 public class QuizData : MonoBehaviour
 {
@@ -30,5 +31,26 @@ public class QuizData : MonoBehaviour
 	private void Initialize()
 	{
 		_quizQuestionsDictionary = _quizQuestionsData.ToDictionary(x => x.Type, x => x.PanelPrefab);
+	}
+
+	[Serializable]
+	public struct Question
+	{
+		public int QuestionNumber;
+		public string QuestionText;
+		public List<QuestionAnswers> Answers;
+		public string CorrectAnswer;
+	}
+
+	[Serializable]
+	public struct QuestionsData
+	{
+		public List<Question> Questions;
+	}
+
+	[Serializable]
+	public struct QuestionAnswers
+	{
+		public string Answer;
 	}
 }

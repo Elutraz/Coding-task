@@ -1,19 +1,19 @@
 {
 	"Questions":[
-	{"QuestionNumber":1,"QuestionText":"Hula","Answers":[{"Answer":"Hula"},{"Answer":"Hop"},{"Answer":"Hop"}],"CorrectAnswer":"Hop"},
-	{"QuestionNumber":2,"QuestionText":"Hula","Answers":[{"Answer":"Hula"},{"Answer":"Hop"},{"Answer":"Hop"}],"CorrectAnswer":"Hop"},
-	{"QuestionNumber":3,"QuestionText":"Hula","Answers":[{"Answer":"Hula"},{"Answer":"Hop"},{"Answer":"Hop"}],"CorrectAnswer":"Hop"},
-	{"QuestionNumber":4,"QuestionText":"Hula","Answers":[{"Answer":"Hula"},{"Answer":"Hop"},{"Answer":"Hop"}],"CorrectAnswer":"Hop"},
-	{"QuestionNumber":5,"QuestionText":"Hula","Answers":[{"Answer":"Hula"},{"Answer":"Hop"},{"Answer":"Hop"}],"CorrectAnswer":"Hop"},
-	{"QuestionNumber":6,"QuestionText":"Hula","Answers":[{"Answer":"Hula"},{"Answer":"Hop"},{"Answer":"Hop"}],"CorrectAnswer":"Hop"},
-	{"QuestionNumber":7,"QuestionText":"Hula","Answers":[{"Answer":"Hula"},{"Answer":"Hop"},{"Answer":"Hop"}],"CorrectAnswer":"Hop"},
-	{"QuestionNumber":8,"QuestionText":"Hula","Answers":[{"Answer":"Hula"},{"Answer":"Hop"},{"Answer":"Hop"}],"CorrectAnswer":"Hop"},
-	{"QuestionNumber":9,"QuestionText":"Hula","Answers":[{"Answer":"Hula"},{"Answer":"Hop"},{"Answer":"Hop"}],"CorrectAnswer":"Hop"},
-	{"QuestionNumber":10,"QuestionText":"Hula","Answers":[{"Answer":"Hula"},{"Answer":"Hop"},{"Answer":"Hop"}],"CorrectAnswer":"Hop"},
-	{"QuestionNumber":11,"QuestionText":"Hula","Answers":[{"Answer":"Hula"},{"Answer":"Hop"},{"Answer":"Hop"}],"CorrectAnswer":"Hop"},
-	{"QuestionNumber":12,"QuestionText":"Hula","Answers":[{"Answer":"Hula"},{"Answer":"Hop"},{"Answer":"Hop"}],"CorrectAnswer":"Hop"},
-	{"QuestionNumber":13,"QuestionText":"Hula","Answers":[{"Answer":"Hula"},{"Answer":"Hop"},{"Answer":"Hop"}],"CorrectAnswer":"Hop"},
-	{"QuestionNumber":14,"QuestionText":"Hula","Answers":[{"Answer":"Hula"},{"Answer":"Hop"},{"Answer":"Hop"}],"CorrectAnswer":"Hop"},
-	{"QuestionNumber":15,"QuestionText":"Hula","Answers":[{"Answer":"Hula"},{"Answer":"Hop"},{"Answer":"Hop"}],"CorrectAnswer":"Hop"}
+	{"QuestionNumber":1,"QuestionText":"How many legs do ducks have?","Answers":[{"Answer":"1"},{"Answer":"2"},{"Answer":"4"}],"CorrectAnswer":"2"},
+	{"QuestionNumber":2,"QuestionText":"What is dogs most prominent sense?","Answers":[{"Answer":"Smell"},{"Answer":"Sight"},{"Answer":"Touch"}],"CorrectAnswer":"Smell"},
+	{"QuestionNumber":3,"QuestionText":"What is the only big cat that doesn’t roar?","Answers":[{"Answer":"Lion"},{"Answer":"Leopard"},{"Answer":"Cheetah"}],"CorrectAnswer":"Cheetah"},
+	{"QuestionNumber":4,"QuestionText":"What color is the tongue of a giraffe?","Answers":[{"Answer":"Yellow"},{"Answer":"Purple"},{"Answer":"Blue"}],"CorrectAnswer":"Purple"},
+	{"QuestionNumber":5,"QuestionText":"Which animal’s poop is known to take the shape of cubes?","Answers":[{"Answer":"Dung beetle"},{"Answer":"Elephant"},{"Answer":"Woombat"}],"CorrectAnswer":"Wombat"},
+	{"QuestionNumber":6,"QuestionText":"Select animal thats not a fish.","Answers":[{"Answer":"Eel"},{"Answer":"Dolphin"},{"Answer":"Sea bass"}],"CorrectAnswer":"Dolphin"},
+	{"QuestionNumber":7,"QuestionText":"Considering eating habits pigs are:","Answers":[{"Answer":"Carnivore"},{"Answer":"Omnivore"},{"Answer":"Herbivore"}],"CorrectAnswer":"Omnivore"},
+	{"QuestionNumber":8,"QuestionText":"How many eyes spiders usually have?","Answers":[{"Answer":"2"},{"Answer":"5"},{"Answer":"8"}],"CorrectAnswer":"8"},
+	{"QuestionNumber":9,"QuestionText":"Which animal is largest land animal?","Answers":[{"Answer":"Whale"},{"Answer":"Elephant"},{"Answer":"Black bear"}],"CorrectAnswer":"Elephant"},
+	{"QuestionNumber":10,"QuestionText":"Which is the fastest?","Answers":[{"Answer":"Hare"},{"Answer":"Horse"},{"Answer":"Greyhound"}],"CorrectAnswer":"Hare"},
+	{"QuestionNumber":11,"QuestionText":"What is a young penguin called?","Answers":[{"Answer":"Ugly"},{"Answer":"Chick"},{"Answer":"Fish"}],"CorrectAnswer":"Chick"},
+	{"QuestionNumber":12,"QuestionText":"The body of the Egyptian Sphinx was based on which animal?","Answers":[{"Answer":"Crocodile"},{"Answer":"Dog"},{"Answer":"Lion"}],"CorrectAnswer":"Lion"},
+	{"QuestionNumber":13,"QuestionText":"Which animal can't jump?","Answers":[{"Answer":"Cat"},{"Answer":"Elephant"},{"Answer":"Crow"}],"CorrectAnswer":"Elephant"},
+	{"QuestionNumber":14,"QuestionText":"What is world's most dangerous bird?","Answers":[{"Answer":"Goose"},{"Answer":"Cassowary"},{"Answer":"Condor"}],"CorrectAnswer":"Cassowary"},
+	{"QuestionNumber":15,"QuestionText":"Testing question is it?","Answers":[{"Answer":"No"},{"Answer":"Yes"},{"Answer":"Maybe"}],"CorrectAnswer":"Yes"}
 	]
 }
