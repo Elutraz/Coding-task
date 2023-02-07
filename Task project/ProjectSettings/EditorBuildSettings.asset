@@ -14,4 +14,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/AugmentedRealityScene.unity
     guid: e36b8769becec1f46bf58c61b5a2e566
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: e7923c5bdc47e344d82a70e6e27ad2fc,
+      type: 2}
