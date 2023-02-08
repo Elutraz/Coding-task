@@ -11,13 +11,13 @@ public class QuizQuestion : MonoBehaviour
 
 	[SerializeField] protected List<QuizAnswerButton> _answerButtons = new List<QuizAnswerButton>();
 
-	protected int _buttonIndexOfCorrectAnswer = -1;
+	protected QuizAnswerButton _correctAnswerButton = null;
 
 	protected Action<bool> _onAnswerRecieved;
 
 	protected void OnAnswerButtonSelected(QuizAnswerButton quizAnswerButton)
 	{
-		_onAnswerRecieved.Invoke(quizAnswerButton == _answerButtons[_buttonIndexOfCorrectAnswer]);
+		_onAnswerRecieved.Invoke(quizAnswerButton == _correctAnswerButton);
 		Destroy(gameObject);
 	}
 

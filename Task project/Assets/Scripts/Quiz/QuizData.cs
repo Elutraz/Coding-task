@@ -39,7 +39,7 @@ public class QuizData : MonoBehaviour
 		public int QuestionNumber;
 		public string QuestionText;
 		public List<QuestionAnswers> Answers;
-		public string CorrectAnswer;
+		public int CorrectAnswerNumber;
 	}
 
 	[Serializable]

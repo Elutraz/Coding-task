@@ -93,7 +93,7 @@ public abstract class QuizQuestionPanel : MonoBehaviour
 	{
 		foreach (var question in questions)
 		{
-			Debug.Log("Question number: " + question.QuestionNumber + " Question text: " + question.QuestionText + " Correct answer: " + question.CorrectAnswer);
+			Debug.Log("Question number: " + question.QuestionNumber + " Question text: " + question.QuestionText + " Correct answer: " + question.CorrectAnswerNumber);
 		}
 	}
 }

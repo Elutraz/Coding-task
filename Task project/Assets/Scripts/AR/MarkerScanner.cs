@@ -19,7 +19,12 @@ public class MarkerScanner : MonoBehaviour
 	{
 		foreach(var scannedImage in eventArgs.added)
 		{
-			Debug.Log(scannedImage.name);
+			Debug.Log("Added: " + scannedImage.name);
+		}
+
+		foreach (var scannedImage in eventArgs.removed)
+		{
+			Debug.Log("Removed: " + scannedImage.name);
 		}
 	}
 }

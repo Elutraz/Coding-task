@@ -10,6 +10,8 @@ public class QuizQuestionAnimal : QuizQuestion
 	{
 		_questionTextMesh.text = questionRecievend.QuestionText;
 
+		int correctAnswerIndex = questionRecievend.CorrectAnswerNumber - 1;
+
 		var random = new System.Random();
 		_answerButtons = _answerButtons.OrderBy(x => random.Next()).ToList();
 
@@ -18,9 +20,9 @@ public class QuizQuestionAnimal : QuizQuestion
 			string answer = questionRecievend.Answers[i].Answer;
 			_answerButtons[i].InitializeButton(answer, OnAnswerButtonSelected);
 
-			if (_buttonIndexOfCorrectAnswer == -1 && answer == questionRecievend.CorrectAnswer)
+			if (_correctAnswerButton == null && correctAnswerIndex == i)
 			{
-				_buttonIndexOfCorrectAnswer = i;
+				_correctAnswerButton = _answerButtons[i];
 			}
 		}
 
