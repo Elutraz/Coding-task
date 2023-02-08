@@ -25,4 +25,4 @@ MonoBehaviour:
     AverageBodyMassKG: 1192
     Description: The giraffe's chief distinguishing characteristics are its extremely
       long neck and legs, its horn-like ossicones, and its spotted coat patterns.
-  MapImage: {fileID: 2800000, guid: 52b079710d8b86e438d623b8928913c2, type: 3}
+  MapImage: {fileID: 21300000, guid: 52b079710d8b86e438d623b8928913c2, type: 3}

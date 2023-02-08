@@ -7,7 +7,7 @@ public class ScriptableObjectAnimalInfo : ScriptableObject
 {
 	public string AnimalInformation = "";
 	public ShortInformation CompactInformation = new ShortInformation();
-	public Texture2D MapImage;
+	public Sprite MapImage;
    
 	[Serializable]
 	public class ShortInformation
