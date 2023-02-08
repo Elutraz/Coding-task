@@ -25,6 +25,14 @@ MonoBehaviour:
     m_Address: QuestionsPlanets
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 0c02c2ddac005de41b7d932ea4b9b834
+    m_Address: ElephantInfo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b1b188a018277fc4c9bd6137b44c5e77
+    m_Address: GiraffeInfo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 76685221da65a924b882a5a7e4521999, type: 2}
   m_SchemaSet:

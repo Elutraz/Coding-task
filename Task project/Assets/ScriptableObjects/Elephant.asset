@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f73ce02f7859034982b0502f9a8c413, type: 3}
+  m_Name: Elephant
+  m_EditorClassIdentifier: 
+  AnimalInformation: 'Elephants are the largest existing land animals. Three living
+    species are currently recognised: the African bush elephant, the African forest
+    elephant, and the Asian elephant. They are the only surviving members of the
+    family Elephantidae and the order Proboscidea. The order was formerly much more
+    diverse during the Pleistocene, but most species became extinct during the Late
+    Pleistocene epoch. Distinctive features of elephants include a long proboscis
+    called a trunk, tusks, large ear flaps, pillar-like legs, and tough but sensitive
+    skin.'
+  CompactInformation:
+    FamilyType: Elephantidae
+    Continet: 0
+    AverageBodyMassKG: 3050
+    Description: Elephants are scattered throughout sub-Saharan Africa, South Asia,
+      and Southeast Asia and are found in different habitats, including savannahs,
+      forests, deserts, and marshes. They are herbivorous, and they stay near water
+      when it is accessible.
+  MapImage: {fileID: 2800000, guid: cc65b32addd161e408c8be0f7cf930ef, type: 3}

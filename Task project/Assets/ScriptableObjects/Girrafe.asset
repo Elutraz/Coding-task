@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f73ce02f7859034982b0502f9a8c413, type: 3}
+  m_Name: Girrafe
+  m_EditorClassIdentifier: 
+  AnimalInformation: 'The giraffe is a large African hoofed mammal belonging to the
+    genus Giraffa. It is the tallest living terrestrial animal and the largest ruminant
+    on Earth. Traditionally, giraffes were thought to be one species, Giraffa camelopardalis,
+    with nine subspecies. Most recently, researchers proposed dividing them into
+    up to eight extant species due to new research into their mitochondrial and nuclear
+    DNA, as well as morphological measurements. Seven other extinct species of Giraffa
+    are known from the fossil record. '
+  CompactInformation:
+    FamilyType: Giraffidae
+    Continet: 0
+    AverageBodyMassKG: 1192
+    Description: The giraffe's chief distinguishing characteristics are its extremely
+      long neck and legs, its horn-like ossicones, and its spotted coat patterns.
+  MapImage: {fileID: 2800000, guid: 52b079710d8b86e438d623b8928913c2, type: 3}

@@ -20,7 +20,7 @@ public class QuizQuestionPlanet : QuizQuestion
 			string answer = questionRecievend.Answers[i].Answer;
 			_answerButtons[i].InitializeButton(answer, OnAnswerButtonSelected);
 
-			if (correctAnswerIndex == i)
+			if (_correctAnswerButton == null && correctAnswerIndex == i)
 			{
 				_correctAnswerButton = _answerButtons[i];
 			}
