@@ -13,18 +13,7 @@ public class LanguageSelection : MonoBehaviour
 
 	private void Awake()
 	{
-		_dropdownMenu.onValueChanged.AddListener(delegate { OnDropdownValueChanged(); });
 		InitializeDropdown();
-	}
-
-	private void OnDestroy()
-	{
-		_dropdownMenu.onValueChanged.RemoveListener(delegate { OnDropdownValueChanged(); });
-	}
-
-	private void OnDropdownValueChanged()
-	{
-		PlayerPrefs.SetInt(_languagePersistenceName, _dropdownMenu.value);
 	}
 
 	private void InitializeDropdown()
@@ -35,6 +24,11 @@ public class LanguageSelection : MonoBehaviour
 		}
 
 		_dropdownMenu.value = PlayerPrefs.GetInt(_languagePersistenceName);
+	}
+
+	public void OnDropdownValueChanged()
+	{
+		PlayerPrefs.SetInt(_languagePersistenceName, _dropdownMenu.value);
 	}
 
 	[Serializable]
