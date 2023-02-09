@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
 using UnityEngine.AddressableAssets;
 
 using UnityEngine.ResourceManagement.AsyncOperations;
@@ -21,11 +20,6 @@ public class InformationPanelManager : MonoBehaviour
 		MarkerScannedManager.Instance.RemoveMarkerScannedEventListener(MarkerScannedEventRecieved);
 	}
 
-	public void CommandActivated(Command command)
-	{
-		_informationShower.CommandRecieved(command);
-	}
-
 	private void MarkerScannedEventRecieved(object o, MarkerScannedEvent mse)
 	{
 		if (mse.type == MarkerScannedEvent.Type.Scanned)
@@ -34,7 +28,7 @@ public class InformationPanelManager : MonoBehaviour
 		}
 		else if (mse.type == MarkerScannedEvent.Type.Cleared)
 		{
-			CommandActivated(Command.Close);
+			_informationShower.CloseShower();
 		}
 	}
 
@@ -52,14 +46,5 @@ public class InformationPanelManager : MonoBehaviour
 		_informationShower.GetInformationData(scriptableObjectAssetHandle.Result);
 
 		//Addressables.Release(scriptableObjectAssetHandle);
-	}
-
-	[Serializable]
-	public enum Command
-	{
-		Close,
-		MainInfo,
-		ShortInfo,
-		ShowMap,
 	}
 }

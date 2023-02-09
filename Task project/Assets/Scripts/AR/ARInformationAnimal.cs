@@ -12,7 +12,7 @@ public class ARInformationAnimal : ARInformationShower
 
 	[SerializeField] private ScriptableObjectAnimalInfo _animalInfoData;
 
-	private InformationPanelManager.Command switchState = InformationPanelManager.Command.Close;
+	private Command switchState = Command.Close;
 
 	private void Awake()
 	{
@@ -46,7 +46,7 @@ public class ARInformationAnimal : ARInformationShower
 		_image.sprite = null;
 		_image.enabled = false;
 
-		switchState = InformationPanelManager.Command.Close;
+		switchState = Command.Close;
 	}
 
 	private void InitializeInfoData()
@@ -56,23 +56,23 @@ public class ARInformationAnimal : ARInformationShower
 		ToggleActive(true);
 	}
 
-	public override void CommandRecieved(InformationPanelManager.Command command)
+	public override void CommandRecieved(Command command)
 	{
 		switch (command)
 		{
-			case InformationPanelManager.Command.MainInfo:
+			case Command.MainInfo:
 				ToggleMainInfo();
 				break;
 
-			case InformationPanelManager.Command.ShortInfo:
+			case Command.ShortInfo:
 				ToggleShortInfo();
 				break;
 
-			case InformationPanelManager.Command.ShowMap:
+			case Command.ShowMap:
 				ToggleMap();
 				break;
 
-			case InformationPanelManager.Command.Close:
+			case Command.Close:
 				CloseInfoPanel();
 				break;
 		}
@@ -94,11 +94,11 @@ public class ARInformationAnimal : ARInformationShower
 			return;
 		}
 
-		if (switchState == InformationPanelManager.Command.MainInfo)
+		if (switchState == Command.MainInfo)
 		{
 			_textMesh.enabled = !_textMesh.enabled;
 		}
-		else if (switchState == InformationPanelManager.Command.ShortInfo)
+		else if (switchState == Command.ShortInfo)
 		{
 			_textMesh.text = _animalInfoData.AnimalInformation;
 		}
@@ -118,11 +118,11 @@ public class ARInformationAnimal : ARInformationShower
 			return;
 		}
 
-		if (switchState == InformationPanelManager.Command.ShortInfo)
+		if (switchState == Command.ShortInfo)
 		{
 			_textMesh.enabled = !_textMesh.enabled;
 		}
-		else if (switchState == InformationPanelManager.Command.MainInfo)
+		else if (switchState == Command.MainInfo)
 		{
 			SetShortInfoText();
 		}
@@ -158,4 +158,6 @@ public class ARInformationAnimal : ARInformationShower
 	{
 		gameObject.SetActive(active);
 	}
+
+	
 }

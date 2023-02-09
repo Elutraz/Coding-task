@@ -1,0 +1,56 @@
+U ovom dokumentu cu raspisati kako su implentirana rijesenja kako bi zadovoljila uvijete zadatka.
+
+Glavni izbornik:
+	Kako bi se prikazivao splash screen napravljem je Splash screen prefab koji sadrzi sliku i tekst koji se prikazuje samo jedanput u trajanju od X sekundi prije prikaza glavnog menija.
+	
+	Main menu logic skripta pri inicijalizaciji dohvati bool vrijednost da li je splash screen vec bio prikazan iz Application managera koji je singleton te ako nije pokrece prikaz doticnog na X sekundi. Napravljeno tako da kad se ide iz scene u scenu i vrati natrag na main menu da se ne prikazuje splash screen.
+	
+	Imamo 3 gumba u main meniju. Za pokretanje kviza i pokretanje AR iskustva koji pritiskom na njih se prebacujemo u doticne scene. Te gumb za izlaz iz aplikacije. Sva tri gumba rade preko OnClick actiona koji u sebi imaju postavljene koju od funkcija iz Scene Changer logike se poziva. Za mijenjanje scena su dodani skriptablini objekti tipa scene u kojima je zapisano ime scene koji ce onda scene changer dobiti te obaviti prijelaz. Dodani takvi skriptabilni objekti zbog mogucnost lakseg dodavanja nekih parametara koji bi se mogli korisiti kasnije.
+	
+	Zadnja stvar koja se nalazi u glavnom meniju je dropdown meni za selekciju jezika. Logika je napravljena u SanguageSelection skripti. Dodana je perzistentnost odabira preko PlayerPrefs klase nakon svake promijene odabira jezika.
+	
+
+Kviz scena:
+	Quiz logic prefab je glavna stvar u toj sceni jer sadrzi logiku koja odabire u ovisnosti o kojem tipu pitanja ce stvoriti panel kojem onda predaje koliko pitanja mora pitati igraca te daje callback funkciju koja vraca broj tocnih odgovora. Pri dobivenom rezultatu salje se podatak tocno odgovorenih i broj pitanja Quiz done panelu i gumb za povratak u glavni meni se deaktivira.
+	
+	Quiz done panel u ovisnosti o dobivenim podatcima ako je broj tocnih -1 ce prikazati gresku te samo prikazati gumb za povratak u glavni meni, a gumb za ponovi kviz ce deaktivirati. A inace ce ispisati broj tocnih odgovra i broj pitanja te postotak tocnih odogovra.
+	
+	Preko Quiz data singletona se dohvacaju paneli iz rijecnika po kljuci tipa pitanja. Postavljeno tako da se samo jednom upisu u rijecnik radi brzeg dohvacana panela za pitanja. Trenutacno je mozda overkill jer bi i lista nila dovoljna i da nije singleton, ali jedno od rijesenja ako bi imali mnogo tipova pitanja i njihovih panela.
+	
+	JSON formatirane datoteke se nalaze u folderu Jsons. Strukura pitanja je slijedeca: Questions koji se sastoji od liste Question koje u sebi imaju redni broj pitanja QuestionNumber, pitanje QuestionText, listu Answers koji u sebi ima odogovor Answer, te na kraju pod Question strukturom se nalaz redni broj tocnog odgovora CorrectAnswerNumber (pocinje od 1).
+	
+	Quiz panel je abstraktna klasa koja sluzi kao template za panele po tipovima. Prima broj pitanja i callback metodu koja vraca broj tocno odgovorenih pitanja. Nakon sto se inicializira dohvaca JSON datoteku koristenjem addressable sistema preko patha koji je zapisan u prefabu. Nakon uspjesnog ucitavanja pokrece se predana funkcija koja kod naslijdene QuizQuestionPanelAnimals klase parsira dobiveni Json te od Y dobivenih uzima X (broj sveukupnih pitanja) te ih stavi u queue te stvori pitanje. Inace ako broj pitanja iz Jsona je manje of broja koje mora pitati vraca -1 broj tocnih odgovora.
+	
+	Kod stvaranja pitanja instancira se prefab tipa QuizQuestion. Naslijedene klase od QuizQuestion imaju razradene metode za inicializaciju pitanja. U QuizQuestionAnimal klasi ta metoda prikazuje teks pitanja na ekranu, uzme odgovore i nasumicno ih posalje gumbima s tekstom odgovora kako bi se izbjeglo da su uvijek za isto pitanje odogovori na istom mjestu te na kraju posalju callback metodu na button OnClick koja onda vraca da li je odgovor bio tocan natrag quetion panelu i unisti sam sebe. Nakon sto question panel dobije odgovor (i poveca broj tocnih odgovora ako je odgovor bio tocan) provjeri da li jos ima pitanja u queue te postavi novo pitanje ili invokea OnComplete akciju.
+
+	
+Augmented reality scena:
+	U ovoj sceni gumb za povratak u glavni meni je uvijek vidljiv.
+	
+	Koristen je AR foundation modul zajedno sa XR interaction toolkit, ARCore XR plugin i ARKit XR plugin. U scenu su postavljeni AR Session Origin i AR session objekti koji bi samo po sebi trebali biti dovoljni za lokigu skeniranja markera. U componentu AR Tracked Image manager je postavljen ReferenceImageLibrary objek koji u sebi ima slike markera na koji ce scan reagirati te ime addressablea koji u sebi ima sve podatke za prikaz informacija o scaniranom objektu. Takoder je dodan model slona kao prefab u Tracked Image prefab koji bi onda trebao prokazati taj objek u ARu.
+	
+	Marker scanned manager prefab sa istoimenom scriptom ima referencu na AR Tracked Image managera kako bi se pretplatio na trackedImagesChanged po kojem bi onda mogao dobiti path addressablea od skeniranog markera. Posto postoji problem da skeniranje ne radi iz trenutno nepoznatog razloga napravljeno dummy test rijesenje koje na odredeni pritisak tipke salje MarkerScannedEvent. MarkerScannedEvent ima u sebi podatke kojeg je event tipa i addresable ime.
+	
+	Information panel manager je pretplacen na MarkerScannedEvent kako bi upravljao sa panelom informacija koje se trebaju prikazati, nakon skeniranog markera preko addressablea, kroz AR Information Shower.
+	
+	Trenutno imamo AR information Animal klasu koja naslijeduje AR Information Shower te pri dobivenom skriptable objektu provjerava jel tipa kojeg prihvaca te dobiva referencu na njega. Cim dobije dobru informaciju se aktivira cijeli objekt u sceni (vidimo gumbe na ekranu). Svaki od gumbiju na OnClick vracaju komadu kojom se pale ili gase informacije na slijedeci nacin. Ako se stisne isti gumb tada se togglea informacija na ekranu te ako je neka druga informacija bila vidljiva ona se gasi. Tako da radi kao toggle i kao switch kontekst. Close panel gumb zatvara cijeli panel sa informacijama.
+	
+	U scenu su postavljeni objekti sa teksturama markera koji glume markere za testiranje skenera to TestingPictures objektom.
+	
+
+JSON parse pitanje:
+	Nisam programski rijesio bonus zadatak zbog isteka vremena, ali imam okvirno rijesenje. Pretpostavke su da se ne radi generalni JSON deserilalizer te da ce raditi samo sa trenutnom strukturom za pitanja za zivotinje. Znaci cijeli set pitanja je obuhvacen "tagom" "Questions" nakon koje su u :[] struktura koju smo definirali kao Question. Ideja je umjesto cijelog teksta dobivati isjecke tipa {"QuestionNumber".....CorrectAnswerNumber":2} to predati u JSON parse koji ce vratiti Question strukturu koju cemo ubaciti u QuestionsData.Questions.
+	A to bi dobili da se u string tempQuestion upisuje sve sto na pocetku ima {"QuestionNumber": pa brojali dodatne viticaste zagrade {} i kad bi broj dosao do 0 i slijedeci char je ',' poslali bi taj string u JSON Parse i ako vrati valjani objekt onda ga dodamo i resetiramo tempQuestion te nastavimo sa prolaskom kroz cijelu JSON datoteku.
+	Vjerojatnije ce biti sporije, ali posto velicina stringa koju JSON Parse prima nije vise teoretski ogromna tada bi se memory leak izbjegao.
+
+
+Problemi:
+	Jos uvijek postoji problem sa AR marker skenerom: No active UnityEngine.XR.ARSubsystems.XRSessionSubsystem is available. Please ensure that a valid loader configuration exists in the XR project settings. Pokusao u konfigurirati AR/XR po dolumentaciju na netu, kroz nekoliko tutoriala, ali ne mogu shvatiti sto radim krivo. Probao sam i napraviti novi unity projekt i postavljati AR po uputama, ali bez uspijeha.
+	
+	Pri kraju sam nasao bug u build verziji u AR sceni. Kod dohvacanja addressablea za informaciju za marker nakon inicializacije asset je bio otpusten pa se nije ucitala slika mape za pojedine zivotinje. Nakon sto nisam uopce relesao asset sve je radilo normalno, ali sad imam memory leak. Tako da bi zapravo trebalo napraviti neko rijesenje, mozda da ARInformationShower prima taj asset pa ga releasa ako dobije neki druga asset, ali mozda to nije njegov posao nego nekog drugog.
+
+
+Zakljucci:
+	Nisam bas puno radio sa AR sustavima i JSONom pa je bilo zanimljivo to prouciti. Mislim da se frontend moze napraviti bolje jer smatram da me znam bas doboljno o mogucnostima unitija za rad sa GUIem.
+	
+	Moglo bi biti vise provjera za null reference ako se slucajno negdje dese da bi se osigurao bolji oporavak od greske u programu.

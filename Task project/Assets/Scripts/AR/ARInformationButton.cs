@@ -5,12 +5,12 @@ using System;
 
 public class ARInformationButton : MonoBehaviour
 {
-	[SerializeField] private InformationPanelManager _informationPanelManager;
+	[SerializeField] private ARInformationShower _informationShower;
 
-	[SerializeField] private InformationPanelManager.Command _infoPanelCommand;
+	[SerializeField] private ARInformationShower.Command _infoPanelCommand;
 
 	public void ButtonClicked()
 	{
-		_informationPanelManager?.CommandActivated(_infoPanelCommand);
+		_informationShower?.CommandRecieved(_infoPanelCommand);
 	}
 }

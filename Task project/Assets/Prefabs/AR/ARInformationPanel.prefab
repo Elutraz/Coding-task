@@ -280,7 +280,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54a800f5b0ac3db42b0259366bb74b76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _panelRoot: {fileID: 2164629714477736477}
   _informationShower: {fileID: 3870441725190609157}
 --- !u!1 &9005806404725040527
 GameObject:
@@ -370,6 +369,11 @@ PrefabInstance:
       propertyPath: _infoPanelCommand
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2212868707883849219, guid: 923bea1949e6c94469b0cbee460f7d76,
+        type: 3}
+      propertyPath: _informationShower
+      value: 
+      objectReference: {fileID: 3870441725190609157}
     - target: {fileID: 3846692299535647950, guid: 923bea1949e6c94469b0cbee460f7d76,
         type: 3}
       propertyPath: m_text
@@ -505,6 +509,11 @@ PrefabInstance:
       propertyPath: _infoPanelCommand
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2212868707883849219, guid: 923bea1949e6c94469b0cbee460f7d76,
+        type: 3}
+      propertyPath: _informationShower
+      value: 
+      objectReference: {fileID: 3870441725190609157}
     - target: {fileID: 3846692299535647950, guid: 923bea1949e6c94469b0cbee460f7d76,
         type: 3}
       propertyPath: m_text
@@ -642,6 +651,11 @@ PrefabInstance:
       propertyPath: _infoPanelCommand
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2212868707883849219, guid: 923bea1949e6c94469b0cbee460f7d76,
+        type: 3}
+      propertyPath: _informationShower
+      value: 
+      objectReference: {fileID: 3870441725190609157}
     - target: {fileID: 3846692299535647950, guid: 923bea1949e6c94469b0cbee460f7d76,
         type: 3}
       propertyPath: m_text
@@ -777,6 +791,11 @@ PrefabInstance:
       propertyPath: _infoPanelCommand
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2212868707883849219, guid: 923bea1949e6c94469b0cbee460f7d76,
+        type: 3}
+      propertyPath: _informationShower
+      value: 
+      objectReference: {fileID: 3870441725190609157}
     - target: {fileID: 3846692299535647950, guid: 923bea1949e6c94469b0cbee460f7d76,
         type: 3}
       propertyPath: m_text
