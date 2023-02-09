@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using System;
+using System.Collections.Generic;
 
 public class MarkerScannedManager : MonoBehaviour
 {
@@ -10,12 +11,8 @@ public class MarkerScannedManager : MonoBehaviour
 
 	private EventHandler<MarkerScannedEvent> _markerScannedEvent;
 
-	[Space, Header("Testing variables")]
-	public bool Sendvent = false;
-
-	public MarkerScannedEvent.Type EventType;
-
-	public string AddresableName = "";
+	[Space, Header("Dummy testing")]
+	[SerializeField] List<KeyCodeData> _keyCodeData = new List<KeyCodeData>();
 
 	private void Awake()
 	{
@@ -54,15 +51,6 @@ public class MarkerScannedManager : MonoBehaviour
 		_markerScannedEvent?.Invoke(this, mse);
 	}
 
-	private void Update()
-	{
-		if (Sendvent)
-		{
-			Sendvent = false;
-			SendMarkerScannedEvent(new MarkerScannedEvent(EventType, AddresableName));
-		}
-	}
-
 	private void OnImageChanged(ARTrackedImagesChangedEventArgs eventArgs)
 	{
 		foreach(var scannedImage in eventArgs.added)
@@ -75,4 +63,30 @@ public class MarkerScannedManager : MonoBehaviour
 			Debug.Log("Removed: " + scannedImage.name);
 		}
 	}
+
+	// Dummy testing par cause scanning marker doesnt work at this moment
+
+	private void Update()
+	{
+		CheckKeyCodePressed();
+	}
+
+	private void CheckKeyCodePressed()
+	{
+		foreach (var keyCodeData in _keyCodeData)
+		{
+			if (Input.GetKeyDown(keyCodeData.KeyCode))
+			{
+				SendMarkerScannedEvent(new MarkerScannedEvent(MarkerScannedEvent.Type.Scanned, keyCodeData.AddressableName));
+			}
+		}
+	}
+
+	[Serializable]
+	public class KeyCodeData
+	{
+		public KeyCode KeyCode;
+		public string AddressableName = "";
+	}
+
 }
