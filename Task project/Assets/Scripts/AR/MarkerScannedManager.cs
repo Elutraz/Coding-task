@@ -78,6 +78,7 @@ public class MarkerScannedManager : MonoBehaviour
 			if (Input.GetKeyDown(keyCodeData.KeyCode))
 			{
 				SendMarkerScannedEvent(new MarkerScannedEvent(MarkerScannedEvent.Type.Scanned, keyCodeData.AddressableName));
+				break;
 			}
 		}
 	}

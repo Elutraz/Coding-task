@@ -51,7 +51,7 @@ public class InformationPanelManager : MonoBehaviour
 
 		_informationShower.GetInformationData(scriptableObjectAssetHandle.Result);
 
-		Addressables.Release(scriptableObjectAssetHandle);
+		//Addressables.Release(scriptableObjectAssetHandle);
 	}
 
 	[Serializable]
