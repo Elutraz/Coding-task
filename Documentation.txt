@@ -30,6 +30,7 @@ Augmented reality scena:
 	Koristen je AR foundation modul zajedno sa XR interaction toolkit, ARCore XR plugin i ARKit XR plugin. U scenu su postavljeni AR Session Origin i AR session objekti koji bi samo po sebi trebali biti dovoljni za lokigu skeniranja markera. U componentu AR Tracked Image manager je postavljen ReferenceImageLibrary objek koji u sebi ima slike markera na koji ce scan reagirati te ime addressablea koji u sebi ima sve podatke za prikaz informacija o scaniranom objektu. Takoder je dodan model slona kao prefab u Tracked Image prefab koji bi onda trebao prokazati taj objek u ARu.
 	
 	Marker scanned manager prefab sa istoimenom scriptom ima referencu na AR Tracked Image managera kako bi se pretplatio na trackedImagesChanged po kojem bi onda mogao dobiti path addressablea od skeniranog markera. Posto postoji problem da skeniranje ne radi iz trenutno nepoznatog razloga napravljeno dummy test rijesenje koje na odredeni pritisak tipke salje MarkerScannedEvent. MarkerScannedEvent ima u sebi podatke kojeg je event tipa i addresable ime.
+	Postavljeno je da pritiskom na tipku 'E' se posalje event za slona, a na tipku 'G' za zirafu. Te tako dobije panel sa informacijama o sneniranom markeru.
 	
 	Information panel manager je pretplacen na MarkerScannedEvent kako bi upravljao sa panelom informacija koje se trebaju prikazati, nakon skeniranog markera preko addressablea, kroz AR Information Shower.
 	
